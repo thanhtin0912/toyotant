@@ -874,7 +874,7 @@ img[src*="tribalfusion.com"] {
   /* font-family: "nobel-regular",Helvetica,Arial,sans-serif; */
   font-size: 13px;
   font-weight: normal;
-  margin-bottom: 7px;
+  /* margin-bottom: 7px; */
   padding: 0 15px;
 }
 .navModel .model-specs li {

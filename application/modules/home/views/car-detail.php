@@ -109,19 +109,41 @@
         line-height: 22px;
       }
       .color-item {
-        padding: 6px 6px;
-        margin: 18px 7px;
         cursor: pointer;
       }
       .color-item span{
         display: block;
         border: 1px solid #cccccc;
-        border-radius: 50%;
         border-width: 25px;
         border-style: solid;
         height: 0px;
         width: 0px;
       }
+      .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .text-bold {
+        font-weight: bold;
+
+      }
+      @media (min-width: 320px) and (max-width: 640px) {      
+      .color-item span{
+        display: block;
+        border: 1px solid #cccccc;
+        border-width: 15px;
+        border-style: solid;
+        height: 0px;
+        width: 0px;
+      }
+    }
+    .tag-child-color> li.active > a {
+      background-color: rgb(80 80 80 / 46%) !important;
+    }
+    .tag-child-color > li > a { 
+      border-radius: 0 !important;
+    }
   </style>
   <script>
         window.jssor_3_slider_init = function() {
@@ -292,7 +314,19 @@
     </div>
     <div class="container">
 			<div class="tabbable tabs-below" style="padding: 20px 0;">
-        <ul class=" tag-child-color nav nav-tabs  col-xs-12 col-sm-3 col-md-3">
+        <div class="tab-content">	
+            <?php foreach ($colors as $key => $v): ?>
+            <div  class="tab-pane <?php  if ($key==0){echo "active";} ?>" id="<?= $v->id; ?>">
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <img style="padding-top: 20px" class="img-responsive entry-thumb center" src="<?=PATH_URL.DIR_UPLOAD_CAR_COLOR.$v->avatar ?>">
+                <div class="item-content text-center pt-5 pb-2">
+                  <h3 class="text-bold"><?= $v->name;?></h3>
+                </div>
+              </div>
+            </div>
+            <?php endforeach ?>
+        </div>
+        <ul class="tag-child-color nav nav-tabs  col-xs-12 col-sm-12 col-md-12" style="justify-content: center; display: flex;">
           <?php foreach ($colors as $key => $v): ?>
           <li>
             <a data-toggle="tab" href="#<?= $v->id; ?>">
@@ -308,18 +342,7 @@
           </li>
           <?php endforeach ?>     
 				</ul>							
-        <div class="tab-content ">	
-          <?php foreach ($colors as $key => $v): ?>
-          <div  class="tab-pane <?php  if ($key==0){echo "active";} ?>" id="<?= $v->id; ?>">
-            <div class="col-xs-12 col-sm-9 col-md-9">
-              <img style="padding-top: 20px" class="img-responsive entry-thumb" src="<?=PATH_URL.DIR_UPLOAD_CAR_COLOR.$v->avatar ?>">
-              <div class="item-content text-center" style="text-align: center;">
-                <h3 class="page-header" style="font-size: 17px;"><?= $v->name;?></h3>
-              </div>
-            </div>
-          </div>
-          <?php endforeach ?>
-        </div>
+
       </div>
     </div>
   </div>
@@ -360,7 +383,8 @@
   </div>
   <?php } ?>
   <?php endforeach ?>
-
+  
+  <?php if($specProducts) { ?>
   <div class="container-fluid m2-content connected-tech-enform-content">
     <div class="container">
       <div class="modal-header" >
@@ -405,7 +429,7 @@
       </div>
     </div>
   </div>
-
+  <?php } ?>                   
   <div class="container-fluid m2-content connected-tech-enform-content">
     <div class="container">
       <div class="modal-header" >
