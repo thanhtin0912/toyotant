@@ -1,0 +1,1185 @@
+* {
+    box-sizing: border-box;
+}
+
+::-webkit-input-placeholder {
+    font-style: italic;
+    font-size: 18px;
+    line-height: 150%;
+    color: #808080;
+    opacity: 1;
+}
+
+::-moz-placeholder {
+    font-style: italic;
+    font-size: 18px;
+    line-height: 150%;
+    color: #808080;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    font-style: italic;
+    font-size: 18px;
+    line-height: 150%;
+    color: #808080;
+    opacity: 1;
+}
+
+::-ms-input-placeholder {
+    font-style: italic;
+    font-size: 18px;
+    line-height: 150%;
+    color: #808080;
+    opacity: 1;
+}
+
+::placeholder {
+    font-style: italic;
+    font-size: 18px;
+    line-height: 150%;
+    color: #808080;
+    opacity: 1;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+select[disabled] {
+    color: #000 !important;
+}
+
+input {
+    outline: none;
+    background-color: transparent;
+}
+
+select {
+    outline: none;
+    background-color: transparent;
+}
+
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+    position: absolute;
+    left: 0;
+    opacity: 0.01;
+}
+
+    [type="checkbox"]:not(:checked) + label,
+    [type="checkbox"]:checked + label {
+        position: relative;
+        padding-left: 2.3em;
+        font-size: 1.05em;
+        line-height: 1.7;
+        cursor: pointer;
+    }
+
+        /* checkbox aspect */
+        [type="checkbox"]:not(:checked) + label:before,
+        [type="checkbox"]:checked + label:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            border: 1px solid #cccccc;
+            background: #fff;
+            transition: all 0.275s;
+        }
+
+        /* checked mark aspect */
+        [type="checkbox"]:not(:checked) + label:after,
+        [type="checkbox"]:checked + label:after {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 600;
+            font-size: 14px;
+            position: absolute;
+            top: 0.9em;
+            left: 0.35em;
+            line-height: 0;
+            transition: all 0.2s;
+        }
+
+        [type="checkbox"]:checked + label:before,
+        [type="checkbox"]:checked + label:after {
+            background: #eb0a1e;
+            color: #fff;
+            border: #eb0a1e;
+        }
+
+        /* checked mark aspect changes */
+        [type="checkbox"]:not(:checked) + label:after {
+            opacity: 0;
+            transform: scale(0) rotate(45deg);
+        }
+
+        [type="checkbox"]:checked + label:after {
+            opacity: 1;
+            transform: scale(1) rotate(0);
+        }
+
+/*  */
+
+[type="radio"]:not(:checked),
+[type="radio"]:checked {
+    position: absolute;
+    left: 0;
+    opacity: 0.01;
+}
+
+    [type="radio"]:not(:checked) + label,
+    [type="radio"]:checked + label {
+        position: relative;
+        padding-left: 2.3em;
+        font-size: 1.05em;
+        line-height: 1.7;
+        cursor: pointer;
+    }
+
+        /* radio aspect */
+        [type="radio"]:not(:checked) + label:before,
+        [type="radio"]:checked + label:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            border: 1px solid #cccccc;
+            background: #fff;
+            transition: all 0.275s;
+        }
+
+        /* checked mark aspect */
+        [type="radio"]:not(:checked) + label:after,
+        [type="radio"]:checked + label:after {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 600;
+            font-size: 14px;
+            position: absolute;
+            top: 0.9em;
+            left: 0.35em;
+            line-height: 0;
+            transition: all 0.2s;
+        }
+
+        [type="radio"]:checked + label:before,
+        [type="radio"]:checked + label:after {
+            background: #eb0a1e;
+            color: #fff;
+            border: #eb0a1e;
+        }
+
+        /* checked mark aspect changes */
+        [type="radio"]:not(:checked) + label:after {
+            opacity: 0;
+            transform: scale(0) rotate(45deg);
+        }
+
+        [type="radio"]:checked + label:after {
+            opacity: 1;
+            transform: scale(1) rotate(0);
+        }
+
+.test-driven-input-group--total {
+    margin-top: 32px;
+}
+
+.test-driven-input-label--total {
+    font-weight: bold;
+    font-size: 18px !important;
+    line-height: 120% !important;
+    color: #eb0a1e !important;
+}
+
+.test-driven-text-input--total {
+    font-size: 24px;
+    line-height: 120%;
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #cccccc;
+}
+
+    .test-driven-text-input--total small {
+        font-size: 16px;
+    }
+
+.test-driven-input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+.test-driven-checkbox-group {
+    margin-top: 39px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+}
+
+    .test-driven-checkbox-group .checkbox-group-container .test-driven-input-label {
+        margin: 0;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 120%;
+        color: #1a1a1a;
+    }
+
+    .test-driven-checkbox-group .info-line-value {
+        font-size: 24px;
+        line-height: 120%;
+        color: #1a1a1a;
+        white-space: nowrap;
+    }
+
+        .test-driven-checkbox-group .info-line-value .info-line-currency {
+            font-size: 14px;
+        }
+
+.test-driven-input-group .test-driven-input-label {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 150%;
+    color: #1a1a1a;
+    margin-bottom: 16px;
+}
+
+.test-driven-input-group .test-driven-text-input {
+    width: 100%;
+    padding-bottom: 8px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #cccccc;
+}
+
+    .test-driven-input-group .test-driven-text-input::-webkit-input-placeholder {
+        color: #cccccc;
+        font-style: normal;
+    }
+
+    .test-driven-input-group .test-driven-text-input:-moz-placeholder {
+        color: #cccccc;
+        font-style: normal;
+    }
+
+    .test-driven-input-group .test-driven-text-input::-moz-placeholder {
+        color: #cccccc;
+        font-style: normal;
+    }
+
+    .test-driven-input-group .test-driven-text-input:-ms-input-placeholder {
+        color: #cccccc;
+        font-style: normal;
+    }
+
+    .test-driven-input-group .test-driven-text-input::-webkit-input-placeholder {
+        color: #cccccc;
+        font-style: normal;
+    }
+
+.test-driven-input-group .test-driven-select-input-container {
+    width: 100%;
+    position: relative;
+}
+
+    .test-driven-input-group
+    .test-driven-select-input-container
+    .test-driven-select-input {
+        width: 100%;
+        padding-bottom: 8px;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid #cccccc;
+        position: relative;
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+    }
+
+        .test-driven-input-group
+        .test-driven-select-input-container
+        .test-driven-select-input
+        option {
+            padding: 8px;
+        }
+
+    .test-driven-input-group .test-driven-select-input-container::after {
+        content: "\f078";
+        font-family: "Font Awesome 5 Free";
+        color: #cccccc;
+        right: 0;
+        padding-top: 8px;
+        position: absolute;
+        pointer-events: none;
+        font-weight: 900;
+    }
+
+.test-driven-input-group--fake {
+    position: relative;
+}
+
+    .test-driven-input-group--fake::after {
+        content: url(../../../Images/test-driven-register/calendar-icon.png);
+        position: absolute;
+        font-weight: 900;
+        color: #cccccc;
+        right: 0;
+        top: 60%;
+    }
+
+.text-driven-calendar-input {
+    position: absolute;
+    top: 60%;
+    width: 100%;
+    opacity: 0;
+    z-index: 2;
+}
+
+.test-driven-form-info-line {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 39px;
+}
+
+    .test-driven-form-info-line:nth-child(2) {
+        margin-top: 47px;
+    }
+
+    .test-driven-form-info-line .info-line-label {
+        display: inline-block;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 170%;
+        color: #1a1a1a;
+    }
+
+    .test-driven-form-info-line .info-line-value {
+        font-size: 24px;
+        line-height: 120%;
+        color: #1a1a1a;
+        white-space: nowrap;
+    }
+
+        .test-driven-form-info-line .info-line-value .info-line-currency {
+            font-size: 14px;
+        }
+
+.page-container {
+    max-width: 1440px;
+    width: 100%;
+    margin: auto;
+    margin-top: 94px;
+    padding-top: 67px;
+    background-size: cover;
+    background: url(../../../images/cost-estimation/cost-estimate-background.png) no-repeat top center fixed;
+    -webkit-background-size: cover !important;
+    -moz-background-size: cover !important;
+    -o-background-size: cover !important;
+    background-size: cover !important;
+}
+
+    .page-container .test-driven-form-container {
+        width: 1000px;
+        background-color: #ffffff;
+        padding: 120px 120px 120px 120px;
+        transition: all 0.5s ease-in-out;
+    }
+
+span.red {
+    color: #eb0a1e;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+}
+
+span.select2-selection.select2-selection--single {
+    outline: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+}
+
+.page-container
+.test-driven-form-container
+.test-driven-form-title-container
+.test-driven-title {
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #1a1a1a;
+}
+
+.page-container
+.test-driven-form-container
+.test-driven-form-content-container
+.test-driven-form-section-1-2 {
+    width: 100%;
+    margin-top: 60px;
+}
+
+.page-container
+.test-driven-form-container
+.test-driven-form-content-container
+.test-driven-form-section-3 {
+    width: 100%;
+    margin-top: 80px;
+}
+
+.test-driven-form-section-title-container .test-driven-form-section-title {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 120%;
+    color: #eb0a1e;
+    margin-bottom: 0;
+}
+
+.page-container
+.test-driven-form-container
+.test-driven-form-content-container
+.test-driven-form-section-4 {
+    width: 100%;
+    margin-top: 80px;
+}
+
+    .page-container
+    .test-driven-form-container
+    .test-driven-form-content-container
+    .test-driven-form-section-4
+    .test-driven-checkbox-group {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .page-container
+    .test-driven-form-container
+    .test-driven-form-content-container
+    .test-driven-form-section-4
+    .car-insurance-container {
+        padding-top: 32px;
+        padding-left: 2.6em;
+    }
+
+        .page-container
+        .test-driven-form-container
+        .test-driven-form-content-container
+        .test-driven-form-section-4
+        .car-insurance-container
+        .insurance-label {
+            display: inline-block;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 120%;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+
+            .page-container
+            .test-driven-form-container
+            .test-driven-form-content-container
+            .test-driven-form-section-4
+            .car-insurance-container
+            .insurance-label:nth-child(3) {
+                margin-top: 40px;
+            }
+
+            .page-container
+            .test-driven-form-container
+            .test-driven-form-content-container
+            .test-driven-form-section-4
+            .car-insurance-container
+            .insurance-label
+            svg {
+                margin-left: 15px;
+                padding-bottom: 3px;
+                cursor: pointer;
+            }
+
+    .page-container
+    .test-driven-form-container
+    .test-driven-form-content-container
+    .test-driven-form-section-4
+    .voluntary-civil-liability-insurance-container {
+        padding-left: 2.6em;
+    }
+
+        .page-container
+        .test-driven-form-container
+        .test-driven-form-content-container
+        .test-driven-form-section-4
+        .voluntary-civil-liability-insurance-container
+        .row {
+            margin-top: 32px;
+        }
+
+    .page-container
+    .test-driven-form-container
+    .test-driven-form-content-container
+    .test-driven-form-section-4
+    .accident-insurance-for-drivers-occupants-container {
+        padding-left: 2.6em;
+    }
+
+        .page-container
+        .test-driven-form-container
+        .test-driven-form-content-container
+        .test-driven-form-section-4
+        .accident-insurance-for-drivers-occupants-container
+        .row {
+            margin-top: 32px;
+        }
+
+    .page-container
+    .test-driven-form-container
+    .test-driven-form-content-container
+    .test-driven-form-section-4
+    .car-insurance-container
+    .row
+    .insurance-checkbox-group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+        .page-container
+        .test-driven-form-container
+        .test-driven-form-content-container
+        .test-driven-form-section-4
+        .car-insurance-container
+        .row
+        .insurance-checkbox-group
+        .insurance-checkbox-label {
+            font-size: 18px;
+            line-height: 120%;
+            color: #1a1a1a;
+        }
+
+.insurance-checkbox-input:checked + label:before,
+.period-checkbox-input:checked + label:before,
+.insurance-checkbox-input:checked + label:after,
+.period-checkbox-input:checked + label:after {
+    background: #101010;
+    color: #fff;
+    border: #101010;
+    border-radius: 50%;
+}
+
+.insurance-checkbox-input:not(:checked) + label:before,
+.period-checkbox-input:not(:checked) + label:before,
+.insurance-checkbox-input:not(:checked) + label:after,
+.period-checkbox-input:not(:checked) + label:after {
+    background: #fff;
+    color: #fff;
+    border: 1px solid #808080;
+    border-radius: 50%;
+}
+
+.page-container
+.test-driven-form-container
+.test-driven-form-content-container
+.test-driven-form-section-5 {
+    width: 100%;
+    margin-top: 56px;
+}
+
+    .page-container
+    .test-driven-form-container
+    .test-driven-form-content-container
+    .test-driven-form-section-5
+    .test-driven-form-section-title-container {
+        margin-bottom: 40px;
+    }
+
+.page-container
+.test-driven-form-container
+.test-driven-form-content-container
+.test-driven-form-section-6 {
+    width: 100%;
+    margin-top: 80px;
+}
+
+    .page-container
+    .test-driven-form-container
+    .test-driven-form-content-container
+    .test-driven-form-section-6
+    .required-checkbox-group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+        .page-container
+        .test-driven-form-container
+        .test-driven-form-content-container
+        .test-driven-form-section-6
+        .required-checkbox-group
+        .required-insurance-checkbox-label {
+            font-size: 14px;
+            line-height: 150%;
+            color: #808080;
+        }
+
+.required-checkbox-input:not(:checked) + label:before,
+.required-checkbox-input:checked + label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #cccccc;
+    background: #fff;
+    transition: all 0.275s;
+}
+
+/* checked mark aspect */
+.required-checkbox-input:not(:checked) + label:after,
+.required-checkbox-input:checked + label:after {
+    content: "\f00c";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    font-size: 12px;
+    position: absolute;
+    top: 0.78em;
+    left: 0.3em;
+    line-height: 0;
+    transition: all 0.2s;
+}
+
+.required-checkbox-input:checked + label:before,
+.required-checkbox-input:checked + label:after {
+    background: #eb0a1e;
+    color: #fff;
+    border: #eb0a1e;
+}
+
+.test-driven-form-submit-button {
+    border: none;
+    outline: none;
+    background-color: #eb0a1e;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 15px 20px;
+    margin-top: 55px;
+}
+
+.page-container
+.test-driven-form-container
+.test-driven-form-content-container
+.test-driven-form-section-submit
+.test-driven-form-submit-button:disabled {
+    background-color: rgba(235, 10, 30, 0.5);
+}
+
+.page-container
+.test-driven-form-container
+.test-driven-form-content-container
+.test-driven-form-section-submit {
+    width: 100%;
+}
+
+.page-container
+.test-driven-form-container
+.test-driven-form-content-container
+.test-driven-form-section-1-2
+.test-driven-car-model-image-container {
+    width: 100%;
+    max-height: 0px;
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+    overflow: -moz-hidden-unscrollable;
+}
+
+    .page-container
+    .test-driven-form-container
+    .test-driven-form-content-container
+    .test-driven-form-section-1-2
+    .test-driven-car-model-image-container
+    .test-driven-car-model-image-title {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 150%;
+        color: #1a1a1a;
+    }
+
+    .page-container
+    .test-driven-form-container
+    .test-driven-form-content-container
+    .test-driven-form-section-1-2
+    .test-driven-car-model-image-container
+    .test-driven-car-model-image {
+        height: 200px;
+        -o-object-fit: contain;
+        object-fit: contain;
+    }
+
+.select2-container--default, .select2-container--default .select2-selection--single {
+    background-color: transparent !important;
+}
+
+@media (max-width: 1000px) {
+    .page-container {
+        padding-top: 0;
+        margin-top: 64px;
+    }
+
+        .page-container .test-driven-form-container {
+            padding: 50px 15px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+}
+
+@media (max-width: 768px) {
+    .page-container
+    .test-driven-form-container
+    .test-driven-form-title-container
+    .test-driven-title {
+        text-align: center;
+        font-size: 32px;
+        line-height: 120%;
+    }
+
+    .page-container
+    .test-driven-form-container
+    .test-driven-form-content-container
+    .test-driven-form-section-1-2 {
+        margin-top: 40px;
+    }
+
+    .test-driven-input-group .test-driven-text-input,
+    .test-driven-input-group
+    .test-driven-select-input-container
+    .test-driven-select-input {
+        font-size: 18px;
+        line-height: 150%;
+        background-color: transparent;
+    }
+
+    .test-driven-input-group {
+        margin-bottom: 24px;
+    }
+
+    .page-container
+    .test-driven-form-container
+    .test-driven-form-content-container
+    .test-driven-form-section-3 {
+        margin-top: 40px;
+    }
+
+    .test-driven-form-section-title-container .test-driven-form-section-title {
+        font-size: 24px;
+        line-height: 120%;
+        text-align: left;
+    }
+
+    .test-driven-form-info-line {
+        margin-top: 31px;
+    }
+
+        .test-driven-form-info-line:nth-child(2) {
+            margin-top: 47px;
+        }
+
+    .page-container
+    .test-driven-form-container
+    .test-driven-form-content-container
+    .test-driven-form-section-4 {
+        margin-top: 40px;
+    }
+
+        .page-container
+        .test-driven-form-container
+        .test-driven-form-content-container
+        .test-driven-form-section-4
+        .test-driven-checkbox-group {
+            margin-top: 24px;
+        }
+
+        .page-container
+        .test-driven-form-container
+        .test-driven-form-content-container
+        .test-driven-form-section-4
+        .car-insurance-container {
+            padding-top: 24px;
+        }
+
+            .page-container
+            .test-driven-form-container
+            .test-driven-form-content-container
+            .test-driven-form-section-4
+            .car-insurance-container
+            .row
+            .insurance-checkbox-group
+            .insurance-checkbox-label {
+                margin-bottom: 16px;
+            }
+
+            .page-container
+            .test-driven-form-container
+            .test-driven-form-content-container
+            .test-driven-form-section-4
+            .car-insurance-container
+            .insurance-label:nth-child(3) {
+                margin-top: 24px;
+                margin-bottom: 20px;
+            }
+
+        .page-container
+        .test-driven-form-container
+        .test-driven-form-content-container
+        .test-driven-form-section-4
+        .voluntary-civil-liability-insurance-container
+        .row {
+            margin-top: 24px;
+            padding: 0 2.6em;
+        }
+
+        .page-container
+        .test-driven-form-container
+        .test-driven-form-content-container
+        .test-driven-form-section-4
+        .car-insurance-container
+        .row
+        .insurance-checkbox-group
+        .period-checkbox-label {
+            margin-bottom: 12px;
+        }
+
+        .page-container
+        .test-driven-form-container
+        .test-driven-form-content-container
+        .test-driven-form-section-4
+        .test-driven-checkbox-group:last-child {
+            margin-top: 0;
+        }
+
+        .page-container
+        .test-driven-form-container
+        .test-driven-form-content-container
+        .test-driven-form-section-4
+        .voluntary-civil-liability-insurance-container {
+            padding-left: 0;
+        }
+
+        .page-container
+        .test-driven-form-container
+        .test-driven-form-content-container
+        .test-driven-form-section-4
+        .accident-insurance-for-drivers-occupants-container
+        .row {
+            padding: 0 2.6em;
+        }
+
+        .page-container
+        .test-driven-form-container
+        .test-driven-form-content-container
+        .test-driven-form-section-4
+        .accident-insurance-for-drivers-occupants-container {
+            padding-left: 0;
+        }
+
+    .page-container
+    .test-driven-form-container
+    .test-driven-form-content-container
+    .test-driven-form-section-5 {
+        margin-top: 26px;
+    }
+
+        .page-container
+        .test-driven-form-container
+        .test-driven-form-content-container
+        .test-driven-form-section-5
+        .test-driven-form-section-title-container {
+            margin-bottom: 40px;
+        }
+
+    .page-container
+    .test-driven-form-container
+    .test-driven-form-content-container
+    .test-driven-form-section-6 {
+        margin-top: 56px;
+    }
+
+    .page-container
+    .test-driven-form-container
+    .test-driven-form-content-container
+    .test-driven-form-section-submit {
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        margin: auto;
+    }
+
+    .test-driven-form-submit-button {
+        margin-top: 40px;
+    }
+
+    .info-line-label + .info-line-value {
+        margin-left: 0.5em;
+    }
+
+    .checkbox-group-container + span {
+        margin-left: 0.5em;
+    }
+
+    .select2-container--default, .select2-container--default .select2-selection--single {
+        background-color: transparent !important;
+    }
+
+    .test-driven-form-section-6
+    .required-checkbox-input:not(:checked) + label:before {
+        border: 1px solid #000;
+        background-color: transparent;
+    }
+
+    .page-container
+    .test-driven-form-container
+    .test-driven-form-content-container
+    .test-driven-form-section-1-2
+    .test-driven-car-model-image-container
+    .test-driven-car-model-image {
+        width: 100%;
+    }
+}
+
+.test-driven-title {
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #1a1a1a;
+}
+
+.test-driven-register-success-content-container {
+    margin-top: 46px;
+}
+
+    .test-driven-register-success-content-container
+    .test-driven-register-success-section {
+        margin-bottom: 24px;
+    }
+
+        .test-driven-register-success-content-container
+        .test-driven-register-success-section
+        p {
+            margin-bottom: 8px;
+            font-size: 18px;
+            line-height: 120%;
+        }
+
+.test-driven-register-success-thank {
+    font-size: 24px;
+    line-height: 115%;
+    margin-bottom: 20px !important;
+}
+
+.test-driven-register-success-sub-thank {
+    font-size: 16px;
+    line-height: 150%;
+    margin-bottom: 0px !important;
+}
+
+.test-driven-register-success-section-title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 120%;
+}
+
+.line-break {
+    height: 1px;
+    width: 100%;
+    background-color: #eb0a1e;
+    margin-top: 16px;
+    margin-bottom: 30px;
+}
+
+.test-driven-register-success-car-image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+.test-driven-register-success-car-image {
+    width: 200px;
+    height: 105px;
+    -o-object-fit: cover;
+    object-fit: contain;
+    margin-bottom: 30px;
+}
+
+.homepage-button a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+.page-container .test-driven-form-container {
+    width: 1000px;
+    background-color: #ffffff;
+    padding: 120px 120px 120px 120px;
+}
+
+.homepage-button, .homepage-button:hover {
+    border: none;
+    outline: none;
+    background-color: #eb0a1e;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 15px 20px;
+    margin-top: 55px;
+}
+
+#car-model-id,
+#car-model-name,
+#grade-id,
+#grade-name,
+#province-id,
+#province-name,
+#agency-id,
+#agency-name,
+#checkbox-1,
+#checkbox-2,
+#checkbox-3,
+#agency-abbreviation,
+#date-expected {
+    display: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    color: transparent;
+    background: transparent;
+}
+
+.test-driven-form-container--success {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0 !important;
+}
+
+@media (max-width: 1000px) {
+    .page-container {
+        padding-top: 0;
+        margin-top: 64px;
+    }
+
+        .page-container .test-driven-form-container {
+            padding: 50px 15px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+}
+
+@media (max-width: 768px) {
+    .test-driven-title {
+        text-align: center;
+        font-size: 32px;
+        line-height: 120%;
+        margin-bottom: 0;
+    }
+
+    .test-driven-register-success-content-container {
+        margin-top: 40px;
+    }
+
+        .test-driven-register-success-content-container
+        .test-driven-register-success-section {
+            margin-bottom: 18px;
+        }
+
+    .test-driven-register-success-thank {
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 115%;
+    }
+
+    .test-driven-register-success-content-container
+    .test-driven-register-success-section
+    p {
+        font-size: 15px;
+        line-height: 120%;
+    }
+
+    .test-driven-register-success-section-title {
+        font-weight: 600;
+    }
+
+    .test-driven-register-success-car-version-name {
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+    }
+
+    .test-driven-register-success-car-image-container {
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        align-items: flex-start;
+    }
+
+    .test-driven-form-section-submit {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .homepage-button {
+        margin: auto;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        margin-top: 40px;
+    }
+}

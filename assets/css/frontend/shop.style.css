@@ -1,0 +1,321 @@
+/*
+ * Template Name: Unify - Responsive Bootstrap Template
+ * Description: Business, Corporate, Portfolio, E-commerce, Blog and One Page Template.
+ * Version: 1.9.2
+ * Author: @htmlstream
+ * Website: http://htmlstream.com
+*/
+
+/*Import Global Compulsory CSS Files*/
+/*@import url(app.css);*/
+/*@import url(blocks.css);*/
+
+/*Import CSS Plugins*/
+/*@import url(plugins/style-switcher.css);*/
+
+
+
+/*Owl Slider v3
+------------------------------------*/
+.owl-slider-v3 .owl-pagination {
+	text-align: center !important;
+}
+
+.owl-slider-v3 .owl-wrapper-outer {
+	margin-bottom: 20px;
+}
+
+.owl-slider-v3.owl-theme .owl-controls .owl-page.active span,
+.owl-slider-v3.owl-theme .owl-controls.clickable .owl-page:hover span {
+	opacity: 1;
+	background: #18ba9b;
+}
+
+.owl-slider-v3.owl-theme .owl-controls .owl-page {
+	zoom: 1;
+	display: inline-block;
+}
+
+.owl-slider-v3.owl-theme .owl-controls .owl-page span {
+	width: 12px;
+	height: 12px;
+	opacity: 0.3;
+	display: block;
+	margin: 5px 3px;
+	background: #bbb;
+	border-radius: 50% !important;
+}
+
+.owl-slider-v3 .item {
+	margin: 0 1px;
+}
+
+/*Filter By Block
+------------------------------------*/
+
+
+/*Slider Snap*/
+.slider-snap {
+	margin: 20px 0;
+}
+
+.slider-snap.noUi-background {
+	box-shadow: inset 0px 1px 1px 0px #b5b5b5;
+}
+
+.slider-snap.noUi-connect {
+	background: #18ba9b;
+}
+
+.slider-snap.noUi-horizontal {
+	height: 10px;
+	background: #f8f8f8;
+	border-radius: 4px !important;
+}
+
+.slider-snap.noUi-horizontal .noUi-handle {
+	width: 25px;
+	height: 20px;
+	border-radius: 3px !important;
+	box-shadow: 0 1px 1px 0 #b5b5b5;
+}
+
+.slider-snap .noUi-handle:before,
+.slider-snap .noUi-handle:after {
+	left: 9px;
+	height: 7px;
+}
+
+.slider-snap .noUi-handle:after {
+    left: 13px;
+}
+
+.slider-snap-text {
+	text-align: center;
+}
+
+.slider-snap-text span {
+	position: relative;
+}
+
+.slider-snap-text span + span:before {
+	top: -2px;
+	left: -15px;
+	content: '\2013';
+	position: absolute;
+}
+
+.slider-snap-text span:after {
+	left: 0;
+	top: -1px;
+	content: "\0024";
+	position: absolute;
+}
+
+.slider-snap-text span {
+	color: #999;
+	font-size: 16px;
+	font-weight: 600;
+	padding: 0 19px 0 11px;
+}
+
+
+
+/*Removes Bootstrap carousel background images*/
+.carousel-control.left,
+.carousel-control.right {
+	background-image: none;
+}
+
+/*RGBA Banner*/
+.rgba-banner-position {
+  position: relative;
+}
+
+.rgba-banner {
+  top: 20px;
+  right: -5px;
+  color: #fff;
+  font-size: 14px;
+  padding: 3px 8px;
+  font-weight: 600;
+  position: absolute;
+  text-transform: uppercase;
+}
+
+.rgba-banner-v2 {
+  right: 0;
+  top: 20px;
+  color: #fff;
+  font-size: 14px;
+  padding: 3px 8px;
+  font-weight: 600;
+  position: absolute;
+  text-transform: uppercase;
+}
+
+/*Master Slider
+------------------------------------*/
+.ms-showcase2-template {
+  margin: 0 auto;
+  max-width: 550px;
+}
+.ms-showcase2-template .ms-view {
+  background: transparent;
+}
+
+/*Revolution Slider (Main)
+------------------------------------*/
+.tp-banner-container ul li,
+.fullscreenbanner-container ul li {
+  list-style: none;
+  visibility: hidden;
+}
+
+.tp-bullets.preview4 .bullet {
+  border-radius: 10px !important;
+}
+
+.tp-banner-container a.btn-u,
+.tp-banner-container a.btn-u:hover {
+  color: #fff;
+  border: solid 1px transparent;
+}
+
+.tp-banner-container a.re-btn-brd {
+  background: none;
+  border: solid 1px #fff;
+}
+
+.tp-banner-container a.re-btn-brd:hover {
+  color: #555;
+  background: #fff;
+}
+
+/*Fullwidth*/
+.tp-banner-container .btn-u.btn-brd {
+  font-weight: 400;
+}
+
+.tp-banner-container {
+  position: relative;
+}
+
+/*Fullscreen*/
+.fullscreen-container {
+  width:100%;
+  position:relative;
+  padding:0;
+}
+
+/*Slider Contents v1*/
+.revolution-mch-1:after {
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  content: ' ';
+  position: absolute;
+  /* background: rgba(0,0,0,0.3); */
+}
+
+.revolution-ch1 {
+  color: #fff;
+  font-size: 50px;
+  font-weight: 200;
+  line-height: 60px;
+  padding: 30px 50px;
+  text-align: center;
+  border: 1px solid #fff;
+  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+}
+
+.revolution-ch2 {
+  color: #fff;
+  font-size: 30px;
+  max-width: 470px;
+  line-height: 32px;
+  position: relative;
+  text-align: center;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+}
+
+.revolution-ch2:after {
+  left: 50%;
+  width: 70px;
+  height: 2px;
+  content: ' ';
+  bottom: -20px;
+  background: #fff;
+  margin-left: -35px;
+  position: absolute;
+}
+
+.revolution-ch3 {
+  color: #fff;
+  font-size: 50px;
+  font-weight: 200;
+  line-height: 60px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+}
+
+.revolution-ch4 {
+  color: #fff;
+  font-size: 18px;
+  max-width: 300px;
+  line-height: 30px;
+  text-align: right;
+  position: relative;
+  font-weight: normal;
+  font-family: "Open Sans", sans-serif;
+}
+
+.revolution-ch5 {
+  color: #fff;
+  font-size: 50px;
+  font-weight: 200;
+  line-height: 60px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+}
+
+/*Back to top Button
+------------------------------------*/
+#topcontrol {
+  color: #fff;
+  z-index: 99;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  background: #222;
+  position: relative;
+  right: 14px !important;
+  bottom: 11px !important;
+  border-radius: 3px !important;
+}
+
+#topcontrol:after {
+  left: 8.5px;
+  content: "\f106";
+  position: absolute;
+  text-align: center;
+  font-family: FontAwesome;
+}
+
+#topcontrol:hover {
+	color: #fff;
+	background: #18ba9b;
+	transition: all 0.3s ease-in-out;
+}
+
+/*Hiding arrows for select field in IE*/
+select::-ms-expand {
+  display: none;
+}
