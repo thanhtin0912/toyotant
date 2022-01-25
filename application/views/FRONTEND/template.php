@@ -43,6 +43,7 @@
   <script type="text/javascript" src="<?= PATH_URL; ?>assets/js/frontend/jssor.slider-28.1.0.min.js"></script>
   <!-- tab -->
   <script type="text/javascript" src="<?= PATH_URL; ?>assets/js/frontend/marquee.js"></script>
+  <!-- <script type="text/javascript" src="<?= PATH_URL; ?>assets/js/frontend/bs-select.js"></script> -->
   <script type="text/javascript">
     $(document).ready(function () {
       var $tabs = $('.horizontalTab');
@@ -280,7 +281,7 @@
           </div>
       </div>
 	  </div>
-    <div class="header-v5 header-static">
+    <div class="header-v5 header-static header-fixed-shrink">
 			<!-- Navbar -->
 			<div class="navbar navbar-default mega-menu" role="navigation">
 				<div class="container">
@@ -617,7 +618,7 @@
     </li>
   </ul>
 </div>
-<div class="tool-mobile">
+<!-- <div class="tool-mobile">
   <a href="<?= PATH_URL ?>du-toan-tai-chinh" class="tool-item">
       <span class="bg-icon_calculate"></span>
   </a>
@@ -636,7 +637,7 @@
   <a href="https://www.youtube.com/channel/UCkYQ6rQ4RnCvSA8FIeAnBPg" class="tool-item">
       <span class="bg-icon_youtube"></span>
   </a> 
-</div>
+</div> -->
 <div class="hotline">
     <div id="phonering-alo-phoneIcon" class="phonering-alo-phone phonering-alo-green phonering-alo-show">
       <div class="phonering-alo-ph-circle"></div>

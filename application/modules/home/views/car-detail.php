@@ -1,4 +1,4 @@
-  <script type="text/javascript">
+<script type="text/javascript">
     $(document).ready(function () {
       var arrayListInfos = <?php echo json_encode($listInfos) ?>;
       let x = 2;
@@ -97,7 +97,7 @@
       .jssort101 .t {position:absolute;top:0;left:0;width:100%;height:100%;border:none;opacity:.6;}
       .jssort101 .pav .t, .jssort101 .p:hover .t{opacity:1;}
       .explore-item-content {
-        padding: 15px 10px;
+        padding: 20px;
         height: 190px;
       }
       .info-item {
@@ -137,7 +137,7 @@
         height: 0px;
         width: 0px;
       }
-    }
+      }
     .tag-child-color> li.active > a {
       background-color: rgb(80 80 80 / 46%) !important;
     }
@@ -260,8 +260,53 @@
       </div>
     </div>
   </div>
+    <?php if ($listLikeCata && count($listLikeCata) > 0) { ?>
+  <div class="container-fluid m2-content connected-tech-enform-content" style="margin-bottom: 0px ! important ; ">
+    <div class="td-container" >
+        <div class="m2-text-tile  section-header" style="border-bottom: 1px solid #e5e5e5;">
+          <h3>Các mẫu xe <?=$detail[0]->nametype; ?></h3>
+        </div>
+
+          <div class="vc_row wpb_row td-pb-row">
+            <div class="wpb_column vc_column_container td-pb-span12">
+              <div class="wpb_wrapper">
+                  <div class="td_block_wrap td_block_big_grid_1 td_uid_7_5731941f6334b_rand td-grid-style-1 td-hover-1 td-pb-border-top">
+                      <div id="td_uid_7_5731941f6334b" class="td_block_inner">
+                          <div class="td-big-grid-wrapper">
+                              <div class="td-big-grid-scroll" id="khamphacacdongxe">
+                              <?php foreach ($listLikeCata as $key => $v) : ?>
+                                <div class="td_module_mx6 td-animation-stack col-sm-2 col-md-2-20 td-big-grid-post td-small-thumb grid-match-height grid-item first-row">
+                                  <div class="m2-text-tile ">
+                                    <a href="<?= PATH_URL . 'items/'. $v->slug ?>" class="navModel" data-model="<?= $v->name ?>" data-label="Sedans" style="height: 240px ! important">
+                                      <div class="categoryImg">
+                                        <img src="<?= PATH_URL . DIR_UPLOAD_CAR . $v->avatar ?>" alt="<?= $v->name ?>" width="76%">
+                                      </div>
+                                      <h3 class="title-line" style="padding-left:15px !important ;"> <strong><?= $v->name ?></strong> </h3>
+                                      <ul class="model-specs">
+                                        <li><span style="letter-spacing: 0px ! important;font-weight: bold; font-size: 14px;"><?=number_format($v->price) ?></span> </li>
+                                      </ul>
+                                      <?php if ($v->highlights == 1) { ?>
+                                        <div class='rgba-banner1' style='background: #cf1b27;'><?= $v->uudai ?></div>
+                                      <?php } ?>
+                                      <?php if ($v->highlights == 2) { ?>
+                                        <div class='rgba-banner1' style='background: #00b6f2;'><?= $v->uudai ?></div>
+                                      <?php } ?>
+                                    </a>
+                                  </div>
+                                </div>
+                              <?php endforeach ?>
+                              </div> 
+                          </div>
+                      </div>
+                  </div> <!-- ./block -->
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+  <?php } ?>
   <div class="wrapper" style="background-color: black;">
-    <div class="container-fluid m2-content connected-tech-enform-content" style="padding-top: 2em;">
+    <div class="container-fluid connected-tech-enform-content" style="padding-top: 2em;">
       <div id="jssor_2" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:480px;overflow:hidden;visibility:hidden;">
         <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
           <?php $images = unserialize($detail[0]->images); ?>
@@ -303,8 +348,9 @@
       </div>
     </div>
   </div>
+    <?php if($colors){ ?>
   <script type="text/javascript">jssor_2_slider_init();</script>
-  <div class="container-fluid m2-content connected-tech-enform-content">
+  <div class="container-fluid m2-content connected-tech-enform-content pb-4" style="background-color: #a9a5a50f;">
     <div class="container">
       <div class="modal-header" >
           <div class="m2-text-tile section-header">
@@ -319,7 +365,7 @@
             <div  class="tab-pane <?php  if ($key==0){echo "active";} ?>" id="<?= $v->id; ?>">
               <div class="col-xs-12 col-sm-12 col-md-12">
                 <img style="padding-top: 20px" class="img-responsive entry-thumb center" src="<?=PATH_URL.DIR_UPLOAD_CAR_COLOR.$v->avatar ?>">
-                <div class="item-content text-center pt-5 pb-2">
+                <div class="item-content text-center pt-5 pb-3">
                   <h3 class="text-bold"><?= $v->name;?></h3>
                 </div>
               </div>
@@ -346,6 +392,8 @@
       </div>
     </div>
   </div>
+  <?php } ?>
+  
   <?php foreach ($listInfos as $key => $v) : ?>
   <?php if ($v->total > 0) { ?> 
   <div class="container-fluid m2-content connected-tech-enform-content">
@@ -441,9 +489,9 @@
     <div class="container">
       <div class="rows">
         <div class="col-sm-3 col-md-3">
-          <div class="td-big-grid-wrapper">
+          <div class="td-big-grid-wrapper pt-3">
             <div class="td-big-grid-scroll" >
-              <div class="td_module_mx6 td-animation-stack td-big-grid-post td-small-thumb grid-match-height grid-item first-row" data-idx="1" style="margin-bottom: 2em;">
+              <div class="td_module_mx6 td-animation-stack td-big-grid-post td-small-thumb grid-match-height grid-item first-row">
                 <div class="m2-text-tile" style="text-align: center ! important;">
                   <img class="img-responsive hvr-float-shadow" id ="imgCarSelected" src="<?= PATH_URL . DIR_UPLOAD_CAR . $detail[0]->avatar ?>"  alt="">
                   <h3 style="letter-spacing: 0px ! important;"><span class="PriceNow" id="txtPriceCarLate"><?=number_format($detail[0]->price) ?></span> Tr</h3>
@@ -466,7 +514,7 @@
               </div> 
             </div>
         </div>
-			</div>
+	</div>
       <div class="col-md-1" >
       </div>
 
@@ -617,50 +665,3 @@
       </div>
     </div>
   </div>
-  <?php if ($listLikeCata && count($listLikeCata) > 0) { ?>
-  <div class="container-fluid m2-content connected-tech-enform-content" style="margin-bottom: 0px ! important ; ">
-    <div class="td-container" >
-      <div class="modal-header" >
-          <div class="m2-text-tile  section-header">
-          <h2>Các mẫu xe <?=$detail[0]->nametype; ?></h2>
-        </div>
-      </div>
-          <div class="vc_row wpb_row td-pb-row hightline-product">
-            <div class="wpb_column vc_column_container td-pb-span12">
-              <div class="wpb_wrapper">
-                  <div class="td_block_wrap td_block_big_grid_1 td_uid_7_5731941f6334b_rand td-grid-style-1 td-hover-1 td-pb-border-top">
-                      <div id="td_uid_7_5731941f6334b" class="td_block_inner">
-                          <div class="td-big-grid-wrapper">
-                              <div class="td-big-grid-scroll" id="khamphacacdongxe">
-                              <?php foreach ($listLikeCata as $key => $v) : ?>
-                                <div class="td_module_mx6 td-animation-stack col-sm-2 col-md-2-20 td-big-grid-post td-small-thumb grid-match-height grid-item first-row">
-                                  <div class="m2-text-tile ">
-                                    <a href="<?= PATH_URL . 'items/'. $v->slug ?>" class="navModel" data-model="<?= $v->name ?>" data-label="Sedans" style="height: 240px ! important">
-                                      <div class="categoryImg">
-                                        <img src="<?= PATH_URL . DIR_UPLOAD_CAR . $v->avatar ?>" alt="<?= $v->name ?>" width="76%">
-                                      </div>
-                                      <h3 class="title-line" style="padding-left:15px !important ;"> <strong><?= $v->name ?></strong> </h3>
-                                      <ul class="model-specs">
-                                        <li><span style="letter-spacing: 0px ! important;font-weight: bold; font-size: 14px;"><?=number_format($v->price) ?></span> </li>
-                                      </ul>
-                                      <?php if ($v->highlights == 1) { ?>
-                                        <div class='rgba-banner1' style='background: #cf1b27;'><?= $v->uudai ?></div>
-                                      <?php } ?>
-                                      <?php if ($v->highlights == 2) { ?>
-                                        <div class='rgba-banner1' style='background: #00b6f2;'><?= $v->uudai ?></div>
-                                      <?php } ?>
-                                    </a>
-                                  </div>
-                                </div>
-                              <?php endforeach ?>
-                              </div> 
-                          </div>
-                          <div class="clearfix"></div>
-                      </div>
-                  </div> <!-- ./block -->
-              </div>
-            </div>
-          </div>
-      </div>
-  </div>
-  <?php } ?>

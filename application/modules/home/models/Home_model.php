@@ -139,7 +139,7 @@ class Home_model extends CI_Model {
 		$this->db->where('p.slug',$link);
 		$this->db->where('p.status',1);
 		$this->db->where('p.delete',0);
-		$this->db->order_by('p.price','ASC');
+		$this->db->order_by('p.name','ASC');
 		$this->db->from(PREFIX.$this->table_pro." p");
 		$this->db->join(PREFIX.$this->table_cata_pro." c", 'p.type = c.id', "left");
 		$this->db->join(PREFIX.$this->table_cata." b", 'p.bodytype = b.id', "left");
@@ -182,10 +182,11 @@ class Home_model extends CI_Model {
 		}
 	}
 
-	function getDataListInfosProduct(){
+	function getDataListInfosProduct($id){
 		$this->db->select('n.*, COUNT(i.type) total');
 		$this->db->group_by('n.id');
 		$this->db->where('c.code','INFOCAR');
+		$this->db->where('i.product', $id);
 		$this->db->where('n.status',1);
 		$this->db->where('n.delete',0);
 		$this->db->order_by('n.sort','ASC');
@@ -575,5 +576,31 @@ class Home_model extends CI_Model {
 			return false;
 		}
 	}
+
+	public function saveListTSKT(){ 
+		// var_dump($_POST["car"]);
+		$curdata = json_decode($_POST["arr"]);
+		$count = 1;
+		foreach ($curdata as $key => $v) {
+			foreach ($v->groupDetail as $key => $g) {
+				$data = array(
+					'sort'=> $count,
+					'name'=> $v->groupName,
+					'value'=> $g->name,
+					'description'=> $g->value,
+					'type'=> $_POST["tskt"],
+					'product'=> $_POST["car"],
+					'created'=> date('Y-m-d H:i:s',time()),
+				);
+				if($this->db->insert(PREFIX.$this->table_spec_pro,$data)){
+					$count++;
+				} else {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+
 }
 ?>

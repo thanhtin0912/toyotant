@@ -75,10 +75,12 @@ $route['cong-nghe-tnga'] = "home/cong_nghe_tnga";
 $route['dang-ky-lai-thu'] = "home/test_driver";
 $route['dat-lich-dich-vu'] = "home/booking_service";
 $route['du-toan-tai-chinh'] = "home/financial_estimates";
+$route['nhap-tskt'] = "home/spec";
 
 $route['registerTestDriver'] = "home/registerTestDriver";
 $route['bookingService'] = "home/bookingService";
 $route['formInfoContact'] = "home/formInfoContact";
+$route['insertTSKT'] = "home/insertTSKT";
 
 //Config Router Multi Language
 // $route['^(en|jp)$'] = $route['default_controller'];

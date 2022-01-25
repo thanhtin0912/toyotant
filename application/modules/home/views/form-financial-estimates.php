@@ -97,7 +97,7 @@
                             <div class="col-md-12">
                                 <select class="select-compare"  id="txtCarType">
                                 <?php foreach ($products as $key => $p): ?>
-                                <option value="<?=$p->id ?>" $select ><?=$p->name ?></option>
+                                <option value="<?=$p->id ?>"><?=$p->name ?></option>
                                 <?php endforeach ?>
                                 </select>
                             </div> 

@@ -56,7 +56,7 @@ class Home extends MX_Controller {
         // 
         $data['detail'] = $this->home->getDetailProduct($link);
 		$data['infos'] = $this->home->getDetailInfoProduct($data['detail'][0]->id);
-		$data['listInfos'] = $this->home->getDataListInfosProduct();
+		$data['listInfos'] = $this->home->getDataListInfosProduct($data['detail'][0]->id);
 		$data['colors'] = $this->home->getDataColorProduct($data['detail'][0]->id);
 		$data['tskt'] = $this->home->getDataCommonCode('TSKTCAR');
 		$data['specProducts'] = $this->home->getDataSpecProduct($data['detail'][0]->id);
@@ -405,7 +405,24 @@ class Home extends MX_Controller {
 		$this->template->render();
 	}
 
-	
+	public function spec(){
+		//template
+		$data['body'] = $this->home->getDataCommonCode('BODYTYPE');
+		$data['info'] = $this->home->getInfoSite('NHATRANG');
+		$data['cates'] = $this->catalog->getData();
+		$data['slugs'] = $this->home->getListProductSlugs();
+		//
+		$data['tskt'] = $this->home->getDataCommonCode('TSKTCAR');
+		$data['products'] = $this->home->getListProducts();
+        //
+		$this->template->write('title', "Nhập thông số kỹ thuật");
+		$this->template->write('meta_keywords', "Nhập thông số kỹ thuật");
+		$this->template->write('meta_description', "Nhập thông số kỹ thuật");
+		$this->template->write('meta_url', "Nhập thông số kỹ thuật");
+		$this->template->write('meta_image', "");
+		$this->template->write_view('content','form-input-spec',$data);
+		$this->template->render();
+	}
 
 	public function registerTestDriver(){
 		if ($this->home->saveRegisterTestDriver()) {
@@ -427,6 +444,18 @@ class Home extends MX_Controller {
 			exit;
 		}
 	}
+
+	
+	public function insertTSKT(){
+		if ($this->home->saveListTSKT()) {
+			print 'success.'.$this->security->get_csrf_hash();
+			exit;
+		} else {
+			print 'error.'.$this->security->get_csrf_hash();
+			exit;
+		}
+	}
+	
 	public function content_snippets(){
 		$this->load->view("snippets");
 	}

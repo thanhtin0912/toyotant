@@ -10,10 +10,7 @@ class Products_color_model extends CI_Model {
 		$this->db->order_by('n.delete','ASC');
 		$this->db->order_by($this->input->post('func_order_by'),$this->input->post('order_by'));
 		if($this->input->post('title')!=''){
-			$this->db->like('n.name', $this->input->post('title'));
-		}
-		if($this->input->post('url')!=''){
-			$this->db->like('c.name', $this->input->post('url'));
+			$this->db->like('p.name', $this->input->post('title'));
 		}
 		if($this->input->post('status')!= 2){
 			$this->db->where('n.status', $this->input->post('status'));
@@ -36,10 +33,7 @@ class Products_color_model extends CI_Model {
 	function getTotalsearchContent(){
 		$this->db->select('n.*, p.name as productname');
 		if($this->input->post('title')!=''){
-			$this->db->like('n.name', $this->input->post('title'));
-		}
-		if($this->input->post('url')!=''){
-			$this->db->like('c.name', $this->input->post('url'));
+			$this->db->like('p.name', $this->input->post('title'));
 		}
 		if($this->input->post('status')!= 2){
 			$this->db->where('n.status', $this->input->post('status'));
